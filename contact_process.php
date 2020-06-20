@@ -1,5 +1,5 @@
 <?php
-
+if(isset($_POST['submit'])){
     $to = "bader.ramsay@gmail.com";
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
@@ -13,7 +13,6 @@
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-    $subject = "You have a message from your Bitmap Photography.";
 
     $logo = 'img/logo.png';
     $link = '#';
@@ -33,5 +32,5 @@
 	$body .= "</body></html>";
 
     $send = mail($to, $subject, $body, $headers);
-
+}
 ?>
