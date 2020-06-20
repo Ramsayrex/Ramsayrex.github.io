@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['submit'])){
+
     $to = "bader.ramsay@gmail.com";
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
 
 
     $logo = 'img/logo.png';
-    $link = '#';
+    $link = 'powopen.com';
 
 	$body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Express Mail</title></head><body>";
 	$body .= "<table style='width: 100%;'>";
@@ -32,5 +32,5 @@ if(isset($_POST['submit'])){
 	$body .= "</body></html>";
 
     $send = mail($to, $subject, $body, $headers);
-}
+
 ?>
