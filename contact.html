@@ -163,34 +163,44 @@
                         <h2 class="contact-title">Get in Touch</h2>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="https://docs.google.com/forms/d/e/1FAIpQLSfUbzMABUZ79ridmmGxQK4Sxncww-_sE-9Qd-CTd1vfXROD3w/formResponse?usp=sf_link" method="post" id="contactForm" target="hidden_iframe" onsubmit="submitted=true;">
+
+                        <form name="emailform" id="emailform" class="form-contact" action="https://formspree.io/xzbjvalv" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control w-100" name="entry.1123391816" id="entry.1123391816" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
+                                        <textarea class="form-control w-100" name="message"  cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="entry.2041683202" id="entry.2041683202" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                                        <input class="form-control valid" name="name"  type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="entry.1132433032" id="entry.1132433032" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                        <input class="form-control" name="_replyto"  type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Your Email">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input class="form-control" name="entry.794773765" id="entry.794773765" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                                        <input class="form-control" name="_subject"  type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <button type="submit" value="Submit" class="button button-contactForm boxed-btn">Send</button>
+                                <button type="submit" class="button boxed-btn">Send</button>
                             </div>
                         </form>
-                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted == true) {}"></iframe>
+
+                      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+                      <script src="assets/js/jquery-1.12.1.min.js"></script>
+                      <script type="text/javascript">var submitted=false;</script>
+<script type="text/javascript">
+$('#emailform').on('submit', function(e) {
+$('#emailform *').fadeOut(2000);
+$('#emailform').prepend('Your submission has been processed...');
+});
+</script>
                     </div>
 
 
